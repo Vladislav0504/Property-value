@@ -39,7 +39,7 @@ Description = {
 'Цена': cost,
 'Квартира': flat,
 'Дом': house,
-'Описание': description.text}
+'Описание': description.text.replace('\n', ' ')}
 
-file = json.dumps(Description)
-print(file)
+with open('Property-value.txt', 'w') as f:
+  json.dump(Description, f, ensure_ascii=False)
